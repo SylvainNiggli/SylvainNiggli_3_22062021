@@ -135,6 +135,10 @@ body {
     vertical-align: middle;
     z-index: 1;
   }
+  .description__link:hover {
+    -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.4);
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.4);
+  }
   .description__link:hover .description__link__bg {
     opacity: 1;
   }
@@ -297,6 +301,7 @@ body {
   .restaurants__list__card__heart:hover {
     background: -webkit-linear-gradient(90deg, #ff79da 0%, #9356DC 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .restaurants__list__card__heart:hover .restaurants__list__card__heart__bg {
@@ -311,6 +316,7 @@ body {
     font-size: 1.0em;
     background: -webkit-linear-gradient(90deg, #ff79da 0%, #9356DC 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0;
     z-index: -1;

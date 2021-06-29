@@ -107,8 +107,9 @@ body{
             z-index: 1;
             &:hover{
                 & .description__link__bg{
-                    opacity: 1;
-                }
+                    opacity: 1;                                
+                }  
+                box-shadow: 0 5px 10px 0 rgba($color: #000000, $alpha: 0.4);              
             }   
             &__bg{
                 position: absolute;
@@ -246,6 +247,7 @@ body{
                         }  
                         background: -webkit-linear-gradient(90deg, $secondary-color 0%, $primary-color 100%) ;
                         -webkit-background-clip:text;
+                        background-clip:text;
                         -webkit-text-fill-color:transparent;  
                     }
                     &__bg{
@@ -257,6 +259,7 @@ body{
                         font-size: 1.0em;
                         background: -webkit-linear-gradient(90deg, $secondary-color 0%, $primary-color 100%) ;
                         -webkit-background-clip:text;
+                        background-clip:text;
                         -webkit-text-fill-color:transparent;
                         opacity: 0;
                         z-index: -1;
