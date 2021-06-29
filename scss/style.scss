@@ -2,6 +2,316 @@ $primary-color: #9356DC;
 $secondary-color:#ff79da;
 $tertiary-color:#99e2d0;
 
-h3{
-    color: $primary-color;
+h2{
+    font-size: 1.5em;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header{
+    @media (max-width: 599px)
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10px;
+        height: 60px;
+        width: 100%;
+        box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+        &__logo{
+            height: 30px;
+            width: auto;    
+        }
+    }    
+}
+
+.location{
+    &__form{
+        .location__form__icon{        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;       
+            color: lighten($color: #000000, $amount: 25);
+        }
+        &__text{    
+            color: lighten($color: #000000, $amount: 25);
+        }
+    }   
+    @media (max-width: 599px)
+    {
+        margin-top: 5px;
+        background-color: darken($color: #ffffff, $amount: 7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        width: 100%;
+        color: black;
+        &__form{
+            position: relative;
+            display: flex;
+            align-items: center;
+            .location__form__icon{
+                position: absolute;
+                left: -50px;
+                font-size: 1.1em;
+            }
+            &__text{
+                font-size: 1.0em;
+                font-weight: bold;
+            }
+        }         
+    }   
+}
+
+.description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: darken($color: #ffffff, $amount: 3);
+    @media (max-width: 599px) {
+        padding: 40px;
+        &__title{
+            margin: 0;
+            padding: 0 20px;
+            font-size: 1.6em;
+            text-align: center;
+        }
+        &__subtitle{
+            text-align: center;
+            font-weight: 200;
+        }
+        &__link{  
+            position: relative;          
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.0em;
+            font-weight: 500;
+            background: linear-gradient(175deg, $secondary-color 0%, $primary-color 100%);
+            border-radius: 45px;
+            border: none;
+            box-shadow: 0 5px 10px 0 rgba($color: #000000, $alpha: 0.3);
+            width: 230px;
+            height: 50px;
+            line-height: 50px;
+            margin-top: 10px;  
+            text-align: center; 
+            vertical-align: middle; 
+            z-index: 1;
+            &:hover{
+                & .description__link__bg{
+                    opacity: 1;
+                }
+            }   
+            &__bg{
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                border-radius: 45px;
+                background: linear-gradient(175deg, lighten($secondary-color,5) 0%, lighten($primary-color,5) 100%);
+                opacity: 0;
+                z-index: -1;
+                transition: opacity 250ms;
+            }   
+        }      
+    }  
+}
+
+.operation{
+    margin-top: 40px;
+    &__list{
+        display: flex;    
+        list-style: none;
+        padding: 0;
+        &__card{
+            display: flex;
+            align-items: center;
+            border-radius: 25px;
+            background-color: darken($color: #ffffff, $amount: 3);
+            margin: 10px 20px 10px 35px;
+            height: 80px;
+            box-shadow: 0 5px 10px 0 rgba($color: #000000, $alpha: 0.2);
+            p{
+                border-radius: 45px;
+                background-color: $primary-color;
+                color: #ffffff;
+                height: 25px;
+                line-height: 25px;
+                width: 25px;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 1.1em;
+                font-weight: 400;
+                position: absolute;
+                left: 20px;
+            }
+            span{
+                text-align: center;
+                width: 70px;
+                margin-left: 10px;
+                font-size: 1.4em;
+                color: lighten($color: #000000, $amount: 50);
+            }
+            h3{
+                font-size: 1.1em;
+                font-weight: 550;
+            }
+        }
+    }
+    @media (max-width: 599px) {
+        &__list{
+            flex-direction: column;
+        }
+    }
+    
+}
+
+.restaurants{
+    margin-top: 60px;
+    padding-top: 20px;
+    background-color: darken($color: #ffffff, $amount: 4);
+    &__list{
+        display: flex;
+        list-style: none;
+    }
+    @media (max-width: 599px){
+        &__list{
+            padding: 0 20px;
+            flex-direction: column;
+            &__card{
+                position: relative;
+                width: 100%;
+                height: 260px;
+                border-radius: 15px;
+                margin-bottom: 20px;
+                background-color: #ffffff;
+                box-shadow: 0 5px 10px 0 rgba($color: #000000, $alpha: 0.2);
+                img{
+                    width: 100%;
+                    height: 180px;
+                    object-fit: cover;
+                    border-radius: 15px 15px 0 0;
+                }
+                a{
+                    text-decoration: none;
+                }
+                &__description{
+                    padding: 10px;
+                    h4{
+                        margin: 0;
+                        padding-bottom: 5px;
+                        font-size: 1.1em;
+                        font-weight: 700;
+                        color: #000000;
+                    }
+                }
+                p{
+                    margin: 0;
+                    position: absolute;
+                    right: 10px;
+                    top: 10px;
+                    height: 30px;
+                    width: 75px;
+                    font-size: .9em;
+                    font-weight: 600;
+                    text-align: center;
+                    vertical-align: middle;
+                    line-height: 30px;
+                    background-color: $tertiary-color;
+                    color: darken($color: $tertiary-color, $amount: 35);
+                    border-radius: 2px;
+                }
+
+                &__heart{
+                    position: absolute;
+                    right: 20px;
+                    bottom: 25px;
+                    height: 30px;
+                    width: 30px;
+                    font-size: 1.5em;
+                    z-index: 1;
+                    cursor: pointer;
+                    &:hover{
+                        & .restaurants__list__card__heart__bg{
+                            opacity: 1;
+                        }  
+                        background: -webkit-linear-gradient(90deg, $secondary-color 0%, $primary-color 100%) ;
+                        -webkit-background-clip:text;
+                        -webkit-text-fill-color:transparent;  
+                    }
+                    &__bg{
+                        position: absolute;
+                        right: 0px;
+                        bottom: 0px;
+                        height: 30px;
+                        width: 30px;
+                        font-size: 1.0em;
+                        background: -webkit-linear-gradient(90deg, $secondary-color 0%, $primary-color 100%) ;
+                        -webkit-background-clip:text;
+                        -webkit-text-fill-color:transparent;
+                        opacity: 0;
+                        z-index: -1;
+                        transition: opacity 250ms;
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+.footer{
+    background-color: lighten($color: #000000, $amount: 25);
+    padding-left: 20px;
+    padding-bottom: 20px;
+    &__list{
+        list-style: none;
+        margin: 0;
+        &__item{
+            display: flex;
+            align-items: center;
+            span{   
+                color: #ffffff;
+                width: 25px;
+                font-size: 0.8em;
+            }
+        }
+        
+        &__link{
+            text-decoration: none;
+            
+            h4{
+                margin: 0;
+                font-size: 1.0em;
+                font-weight: 400;
+                color: #ffffff;
+            }
+            &:hover{
+                text-decoration: underline #ffffff;
+                
+            }
+        }
+        li{
+            margin: 10px 0 ;
+        }
+    }
+    @media (max-width: 599px) {
+        &__logo{
+            height: 18px;
+            filter:invert(1);
+            margin-top: 30px;
+        }
+        &__list{           
+            padding: 10px 0;         
+        }
+    }
 }
