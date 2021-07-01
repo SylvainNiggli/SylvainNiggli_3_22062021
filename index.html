@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>        
+        <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/16b51e855e.js" crossorigin="anonymous"></script>
         <title>ohmyfood</title>
     </head>
     <body>
+        <section class="loading">
+            <div class="spinner">
+                <span class="loader spinner__loader"></span>
+                <p class="spinner__text">Veuillez patienter pendant le chargement des menus...</p>
+            </div>
+        </section>
         <header class="header">
             <img class="header__logo" src="images/logo/ohmyfood.png" alt="Logo du site">      
         </header>
@@ -18,15 +25,13 @@
             <div class="location__form">
                 <span class="fas fa-map-marker-alt location__form__icon"></span>
                 <p class="location__form__text">Paris, Belleville</p>
-            </div>
-            
+            </div>           
         </div>
         <section class="description">
             <h1 class="description__title">Réserver le menu qui vous convient</h1>
             <h3 class="description__subtitle">Découvrez des restaurants d'exception, sélectionnés par nos soins.</h3>
-            <a href="" class="description__link" href="pages/page1.html">
+            <a class="description__link" href="#restaurants">
                 Explorer nos restaurants
-                <div class="description__link__bg"></div>
             </a>
         </section>
         <section class="operation">
@@ -48,67 +53,61 @@
                     <h3>Dégustez au restaurant</h3>
                 </li>
             </div>           
-
         </section>
-        <section class="restaurants">
-            <h2>Restaurants</h2>
+        <section  class="restaurants">
+            <h2 id="restaurants">Restaurants</h2>
             <ul class="restaurants__list">
                 <li class="restaurants__list__card">
-                    <a href="">
+                    <a href="/pages/la-palette-du-gout.html">
                         <img src="images/restaurants/la-palette-du-gout.jpg" alt="Photo la palette du goût"/>
                         <div class="restaurants__list__card__description">
                             <h4>La palette du goût</h4>
-                            <h4>Ménilmontant</h4>
+                            <h5>Ménilmontant</h5>
                         </div>
                         <p>Nouveau</p>
                     </a>   
                     <span class="far fa-heart restaurants__list__card__heart">
                         <span class="fas fa-heart restaurants__list__card__heart__bg"></span>
-                    </span>
-                       
+                    </span>                   
                 </li>
                 <li class="restaurants__list__card">
-                    <a href="">
+                    <a href="/pages/la-note-enchantee.html">
                         <img src="images/restaurants/la-note-enchantee.jpg" alt="Photo la note enchantée"/>
                         <div class="restaurants__list__card__description">
                             <h4>La note enchantée</h4>
-                            <h4>Charonne</h4>
+                            <h5>Charonne</h5>
                         </div>
                         <p>Nouveau</p>
                     </a> 
                     <span class="far fa-heart restaurants__list__card__heart">
                         <span class="fas fa-heart restaurants__list__card__heart__bg"></span> 
-                    </span>
-                                  
+                    </span>                               
                 </li>
                 <li class="restaurants__list__card">
-                    <a href="">
+                    <a href="/pages/a-la-française.html">
                         <img src="images/restaurants/a-la-francaise.jpg" alt="Photo à la française"/>
                         <div class="restaurants__list__card__description">
                             <h4>A la française</h4>
-                            <h4>Cité Rouge</h4>
+                            <h5>Cité Rouge</h5>
                         </div>
                     </a> 
                     <span class="far fa-heart restaurants__list__card__heart">
                         <span class="fas fa-heart restaurants__list__card__heart__bg"></span>
-                    </span>
-                                    
+                    </span>                                    
                 </li>
                 <li class="restaurants__list__card">
-                    <a href="">
+                    <a href="/pages/le-delice-des-sens.html">
                         <img src="images/restaurants/le-delice-des-sens.jpg" alt="Photo le délice des sens"/>
                         <div class="restaurants__list__card__description">
                             <h4>Le délice des sens</h4>
-                            <h4>Folie-Méricourt</h4>
+                            <h5>Folie-Méricourt</h5>
                         </div>
                     </a>   
                     <span class="far fa-heart restaurants__list__card__heart">
                         <span class="fas fa-heart restaurants__list__card__heart__bg"></span>
-                    </span>
-                         
+                    </span>                   
                 </li>
-            </ul>
-            
+            </ul>          
         </section>
         <footer class="footer">
             <img class="footer__logo" src="images/logo/ohmyfood.png" alt="Logo du site">
@@ -135,8 +134,7 @@
                         <h4>Contact</h4>
                     </a>
                 </li>               
-            </ul>
-            
-        </footer>
+            </ul>  
+        </footer> 
     </body>
 </html>
