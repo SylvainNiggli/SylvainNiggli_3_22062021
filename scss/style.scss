@@ -1,3 +1,5 @@
+@import url("menu.css");
+
 $primary-color: #9356DC;
 $secondary-color:#ff79da;
 $tertiary-color:#99e2d0;
@@ -47,7 +49,7 @@ body{
 }
 
 .spinner{
-    background: radial-gradient(circle at top , #ffffff 0%, $secondary-color 100%) ;;
+    background: radial-gradient(circle at top , rgba(#ffffff,0.9) 0%, rgba($secondary-color,0.8) 100%) ;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,6 +92,7 @@ body{
 .header{
     @media (max-width: 599px)
     {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -101,6 +104,21 @@ body{
             height: 30px;
             width: auto;    
         }
+        &__return{
+            position: absolute;
+            left: 20px;
+            text-decoration: none;
+            span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 30px;
+                width: 30px;
+                font-size: 1.4em;
+                color: lighten($color: #000000, $amount: 25);
+            }
+        }
+        
     }    
 }
 
@@ -162,45 +180,47 @@ body{
             text-align: center;
             font-weight: 200;
         }
-        &__link{  
-            position: relative;          
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1.0em;
-            font-weight: 500;
-            background: linear-gradient(175deg, $secondary-color 0%, $primary-color 100%);
-            border-radius: 45px;
-            border: none;
-            box-shadow: 0 5px 10px 0 rgba($color: #000000, $alpha: 0.3);
-            width: 230px;
-            height: 50px;
-            line-height: 50px;
-            margin-top: 10px;  
-            text-align: center; 
-            vertical-align: middle; 
-            z-index: 1;
-            &:hover{
-                &::after{
-                    opacity: 1;    
-                    box-shadow: 0 5px 10px 0 rgba($color: #000000, $alpha: 0.4);                              
-                }                         
-            }   
-            &::after{
-                content: '';
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                border-radius: 45px;
-                background: linear-gradient(175deg, lighten($secondary-color,5) 0%, lighten($primary-color,5) 100%);
-                opacity: 0;
-                z-index: -1;
-                transition: opacity 250ms;
-            }   
-        }      
+        
     }  
 }
+
+.main-button{  
+    position: relative;          
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.0em;
+    font-weight: 500;
+    background: linear-gradient(175deg, $secondary-color 0%, $primary-color 100%);
+    border-radius: 45px;
+    border: none;
+    box-shadow: 0 5px 10px 0 rgba($color: #000000, $alpha: 0.3);
+    width: 230px;
+    height: 50px;
+    line-height: 50px;
+    margin-top: 10px;  
+    text-align: center; 
+    vertical-align: middle; 
+    z-index: 1;
+    &:hover{
+        &::after{
+            opacity: 1;    
+            box-shadow: 0 5px 10px 0 rgba($color: #000000, $alpha: 0.4);                              
+        }                         
+    }   
+    &::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border-radius: 45px;
+        background: linear-gradient(175deg, lighten($secondary-color,5) 0%, lighten($primary-color,5) 100%);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+    }   
+}      
 
 .operation{
     margin-top: 40px;
@@ -320,45 +340,49 @@ body{
                     border-radius: 2px;
                 }
 
-                &__heart{
-                    position: absolute;
-                    right: 20px;
-                    bottom: 25px;
-                    height: 30px;
-                    width: 30px;
-                    font-size: 1.5em;
-                    z-index: 1;
-                    cursor: pointer;
-                    &:hover{
-                        & .restaurants__list__card__heart__bg{
-                            opacity: 1;
-                        }  
-                        background: -webkit-linear-gradient(90deg, $secondary-color 0%, $primary-color 100%) ;
-                        -webkit-background-clip:text;
-                        background-clip:text;
-                        -webkit-text-fill-color:transparent;  
-                    }
-                    &__bg{
-                        position: absolute;
-                        right: 0px;
-                        bottom: 0px;
-                        height: 30px;
-                        width: 30px;
-                        font-size: 1.0em;
-                        background: -webkit-linear-gradient(90deg, $secondary-color 0%, $primary-color 100%) ;
-                        -webkit-background-clip:text;
-                        background-clip:text;
-                        -webkit-text-fill-color:transparent;
-                        opacity: 0;
-                        z-index: -1;
-                        transition: opacity 250ms;
-                    }
-                }
-                
             }
         }
     }
 }
+
+.heart{
+    position: absolute; 
+    height: 30px;
+    width: 30px;
+    color: #000000;
+    font-size: 1.5em;
+    z-index: 1;
+    cursor: pointer;
+    &--card{
+        right: 20px;
+        bottom: 25px;
+    }
+    &:hover{
+        & .heart__bg{
+            opacity: 1;
+        }   
+        background: -webkit-linear-gradient(90deg, $secondary-color 0%, $primary-color 100%) ;
+        -webkit-background-clip:text;
+        background-clip:text;
+        -webkit-text-fill-color:transparent;                       
+    }
+    &__bg{
+        position: absolute;
+        background: -webkit-linear-gradient(90deg, $secondary-color 0%, $primary-color 100%) ;
+        -webkit-background-clip:text;
+        background-clip:text;
+        -webkit-text-fill-color:transparent;
+        font-size: 1.0em;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+        left: 0px;
+        top: 0px;
+    }
+}
+
+
+
 
 .footer{
     background-color: lighten($color: #000000, $amount: 25);

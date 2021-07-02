@@ -1,0 +1,99 @@
+$primary-color: #9356DC;
+$secondary-color:#ff79da;
+$tertiary-color:#99e2d0;
+
+.img-restaurant{
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.menu{
+    margin-top: 200px;
+    background: darken($color: #ffffff, $amount: 5);
+    border-radius: 50px 50px 0 0 ;
+    &__title{
+        position: relative;
+        padding-top: 10px;
+        h2{
+            font-family: 'Shrikhand', sans-serif;
+            font-weight: 500;
+            margin: 0;
+        }
+        
+    }
+    &__dish{
+        margin: 20px;
+        margin-bottom: 40px;
+        h3{
+            position: relative;
+            margin-top: 20px;
+            margin-bottom: 25px;
+            font-weight: 300;
+            font-size: .9em;
+            &::after{
+                content: '';
+                position: absolute;
+                left: 0 ;
+                bottom: -8px;
+                width: 40px;
+                border-bottom: 3px solid $tertiary-color;
+            }
+        }
+        a{
+            text-decoration: none;
+            color: #000000;
+        }
+        &__item{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px 0 rgba($color: #000000, $alpha: 0.2);
+            padding-right: 60px;
+            margin-bottom: 15px;
+            h4{
+                margin: 10px;
+                margin-bottom: 0px;
+                font-weight: 600;
+                font-size: .9em;
+                height: 20px;
+                overflow: hidden;
+                text-overflow:ellipsis;
+                white-space: nowrap;
+            }
+            h5{
+                margin: 10px;
+                margin-top: 3px;
+                font-weight: 100;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            p{
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                font-weight: 500;
+                font-size: .9em;
+            }            
+        }       
+    }
+    &__button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 100px;
+    }
+}
+
+.heart{
+    &--menu{
+        top: 35px;
+        right: 30px;
+    }
+}

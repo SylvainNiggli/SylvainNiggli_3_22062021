@@ -1,3 +1,4 @@
+@import url("menu.css");
 h2 {
   font-size: 1.5em;
   padding-top: 20px;
@@ -55,7 +56,7 @@ body {
 }
 
 .spinner {
-  background: radial-gradient(circle at top, #ffffff 0%, #ff79da 100%);
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.9) 0%, rgba(255, 121, 218, 0.8) 100%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,6 +119,7 @@ body {
 
 @media (max-width: 599px) {
   .header {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -136,6 +138,26 @@ body {
   .header__logo {
     height: 30px;
     width: auto;
+  }
+  .header__return {
+    position: absolute;
+    left: 20px;
+    text-decoration: none;
+  }
+  .header__return span {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 30px;
+    width: 30px;
+    font-size: 1.4em;
+    color: #404040;
   }
 }
 
@@ -223,44 +245,47 @@ body {
     text-align: center;
     font-weight: 200;
   }
-  .description__link {
-    position: relative;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.0em;
-    font-weight: 500;
-    background: linear-gradient(175deg, #ff79da 0%, #9356DC 100%);
-    border-radius: 45px;
-    border: none;
-    -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
-            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
-    width: 230px;
-    height: 50px;
-    line-height: 50px;
-    margin-top: 10px;
-    text-align: center;
-    vertical-align: middle;
-    z-index: 1;
-  }
-  .description__link:hover::after {
-    opacity: 1;
-    -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.4);
-            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.4);
-  }
-  .description__link::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border-radius: 45px;
-    background: linear-gradient(175deg, #ff93e1 0%, #a16be0 100%);
-    opacity: 0;
-    z-index: -1;
-    -webkit-transition: opacity 250ms;
-    transition: opacity 250ms;
-  }
+}
+
+.main-button {
+  position: relative;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.0em;
+  font-weight: 500;
+  background: linear-gradient(175deg, #ff79da 0%, #9356DC 100%);
+  border-radius: 45px;
+  border: none;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+  width: 230px;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 10px;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 1;
+}
+
+.main-button:hover::after {
+  opacity: 1;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.main-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 45px;
+  background: linear-gradient(175deg, #ff93e1 0%, #a16be0 100%);
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 250ms;
+  transition: opacity 250ms;
 }
 
 .operation {
@@ -409,41 +434,47 @@ body {
     color: #2c9c81;
     border-radius: 2px;
   }
-  .restaurants__list__card__heart {
-    position: absolute;
-    right: 20px;
-    bottom: 25px;
-    height: 30px;
-    width: 30px;
-    font-size: 1.5em;
-    z-index: 1;
-    cursor: pointer;
-  }
-  .restaurants__list__card__heart:hover {
-    background: -webkit-linear-gradient(90deg, #ff79da 0%, #9356DC 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .restaurants__list__card__heart:hover .restaurants__list__card__heart__bg {
-    opacity: 1;
-  }
-  .restaurants__list__card__heart__bg {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    height: 30px;
-    width: 30px;
-    font-size: 1.0em;
-    background: -webkit-linear-gradient(90deg, #ff79da 0%, #9356DC 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    opacity: 0;
-    z-index: -1;
-    -webkit-transition: opacity 250ms;
-    transition: opacity 250ms;
-  }
+}
+
+.heart {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  color: #000000;
+  font-size: 1.5em;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.heart--card {
+  right: 20px;
+  bottom: 25px;
+}
+
+.heart:hover {
+  background: -webkit-linear-gradient(90deg, #ff79da 0%, #9356DC 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heart:hover .heart__bg {
+  opacity: 1;
+}
+
+.heart__bg {
+  position: absolute;
+  background: -webkit-linear-gradient(90deg, #ff79da 0%, #9356DC 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.0em;
+  opacity: 0;
+  z-index: -1;
+  -webkit-transition: opacity 250ms;
+  transition: opacity 250ms;
+  left: 0px;
+  top: 0px;
 }
 
 .footer {
