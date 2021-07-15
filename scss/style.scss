@@ -17,7 +17,7 @@ body{
 }
 
 .loading{
-    background: radial-gradient(circle at top , rgba(#ffffff,0.9) 0%, rgba($secondary-color,0.8) 100%) ;
+    background: radial-gradient(circle at top , rgba(#ffffff,0.95) 0%, rgba($secondary-color,0.95) 100%) ;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -54,8 +54,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
-    //height: 100%;
+    margin-top: 300px;
     &__loader{
         border-radius: 100px;
         border: 12px solid rgba($primary-color,0.4);
@@ -91,77 +90,106 @@ body{
 
 
 .header{
+    position: relative;       
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+    &__return{
+        position: absolute;
+        text-decoration: none;
+        span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: lighten($color: #000000, $amount: 25);
+        }
+    }
     @media (max-width: 599px)
-    {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding-top: 10px;
-        height: 60px;
-        width: 100%;
-        box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.2);
+    {      
         &__logo{
-            height: 30px;
-            width: auto;    
+            height: 30px; 
         }
         &__return{
-            position: absolute;
             left: 20px;
-            text-decoration: none;
             span{
-                display: flex;
-                align-items: center;
-                justify-content: center;
                 height: 30px;
                 width: 30px;
                 font-size: 1.4em;
-                color: lighten($color: #000000, $amount: 25);
             }
+        }       
+    }   
+    @media (min-width: 600px) and (max-width: 1023px)
+    {      
+        &__logo{
+            height: 40px; 
         }
-        
-    }    
+        &__return{
+            left: 20px;
+            span{
+                height: 50px;
+                width: 50px;
+                font-size: 1.6em;
+            }
+        }       
+    }  
 }
 
 .location{
+    margin-top: 5px;
+    background-color: darken($color: #ffffff, $amount: 7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    color: black;
     &__form{
-        .location__form__icon{        
+        position: relative;
+        display: flex;
+        align-items: center;
+        .location__form__icon{  
+            position: absolute;
+            left: -50px;      
             display: flex;
             justify-content: center;
-            align-items: center;
-            width: 45px;
-            height: 45px;       
+            align-items: center;     
             color: lighten($color: #000000, $amount: 25);
         }
         &__text{    
             color: lighten($color: #000000, $amount: 25);
+            font-weight: bold;
         }
     }   
     @media (max-width: 599px)
     {
-        margin-top: 5px;
-        background-color: darken($color: #ffffff, $amount: 7);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 50px;
-        width: 100%;
-        color: black;
-        &__form{
-            position: relative;
-            display: flex;
-            align-items: center;
-            .location__form__icon{
-                position: absolute;
-                left: -50px;
+        &__form{      
+            &__icon{ 
                 font-size: 1.1em;
+                width: 45px;
+                height: 45px;
             }
             &__text{
-                font-size: 1.0em;
-                font-weight: bold;
+                font-size: 1.0em;              
             }
         }         
-    }   
+    }  
+    @media (min-width: 600px) and (max-width: 1023px)
+    {
+        &__form{      
+            &__icon{ 
+                font-size: 1.2em;
+                width: 50px;
+                height: 50px;
+            }
+            &__text{
+                font-size: 1.1em;              
+            }
+        }         
+    }  
 }
 
 .description{
@@ -169,35 +197,41 @@ body{
     flex-direction: column;
     align-items: center;
     background-color: darken($color: #ffffff, $amount: 3);
-    @media (max-width: 599px) {
-        padding: 40px;
+    padding: 40px;
         &__title{
             margin: 0;
-            padding: 0 20px;
-            font-size: 1.6em;
             text-align: center;
         }
         &__subtitle{
             text-align: center;
             font-weight: 200;
         }
-        
+    @media (max-width: 599px) {
+        &__title{
+            padding: 0 20px;
+            font-size: 1.6em;
+        }        
     }  
+    @media (min-width: 600px) and (max-width: 1023px)
+    {
+        &__title{
+            font-size: 1.7em;
+        }  
+        &__subtitle{
+            font-size: 1.3em;
+        }    
+    }
 }
 
 .main-button{  
     position: relative;          
     color: #ffffff;
     text-decoration: none;
-    font-size: 1.0em;
     font-weight: 500;
     background: linear-gradient(175deg, $secondary-color 0%, $primary-color 100%);
     border-radius: 45px;
     border: none;
     box-shadow: 0 5px 10px 0 rgba($color: #000000, $alpha: 0.3);
-    width: 230px;
-    height: 50px;
-    line-height: 50px;
     margin-top: 10px;  
     text-align: center; 
     vertical-align: middle; 
@@ -220,7 +254,20 @@ body{
         opacity: 0;
         z-index: -1;
         transition: opacity 250ms;
-    }   
+    }  
+    @media (max-width: 599px) {
+        width: 230px;
+        height: 50px;
+        line-height: 50px;  
+        font-size: 1.0em;  
+    }  
+    @media (min-width: 600px) and (max-width: 1023px)
+    {
+        width: 250px;
+        height: 60px;
+        line-height: 60px;  
+        font-size: 1.1em; 
+    } 
 }      
 
 .operation{
@@ -229,7 +276,9 @@ body{
         display: flex;    
         list-style: none;
         padding: 0;
+        
         &__card{
+            position: relative;
             display: flex;
             align-items: center;
             border-radius: 25px;
@@ -249,11 +298,11 @@ body{
                 font-size: 1.1em;
                 font-weight: 400;
                 position: absolute;
-                left: 20px;
+                left: -20px;
             }
             span{
                 text-align: center;
-                width: 70px;
+                width: 20%;
                 margin-left: 10px;
                 font-size: 1.4em;
                 color: lighten($color: #000000, $amount: 50);
@@ -261,6 +310,8 @@ body{
             h3{
                 font-size: 1.1em;
                 font-weight: 550;
+                padding-right: 20px;
+                text-align: center;
             }
             &:hover{
                 background-color: lighten($color: $primary-color, $amount: 35);
@@ -270,88 +321,116 @@ body{
             }
         }
     }
-    @media (max-width: 599px) {
+    @media (max-width: 1023px) {
         &__list{
             flex-direction: column;
+            &__card{
+                margin: 10px 20px 10px 35px;
+            }
         }
+    }
+    @media (min-width: 1024px) 
+    {
+        &__list{
+            flex-direction: row;
+            margin: 40px 20px 40px 40px;
+            justify-content: space-between;
+            &__card{
+                margin: 10px 0px 10px 0px;
+                width: 30%;
+            }
+        } 
     }
     
 }
 
 .restaurants{
-    margin-top: 60px;
+    margin: 60px 0;
     padding-top: 20px;
     background-color: darken($color: #ffffff, $amount: 4);
     &__list{
         display: flex;
         list-style: none;
-    }
-    @media (max-width: 599px){
-        &__list{
-            padding: 0 20px;
-            flex-direction: column;
-            &__card{
-                position: relative;
-                width: 100%;
-                height: 260px;
-                border-radius: 15px;
-                margin-bottom: 20px;
-                background-color: #ffffff;
-                box-shadow: 0 5px 10px 0 rgba($color: #000000, $alpha: 0.2);
-                img{
-                    width: 100%;
-                    height: 180px;
-                    object-fit: cover;
-                    border-radius: 15px 15px 0 0;
-                }
-                a{
-                    text-decoration: none;
-                }
-                &__description{
-                    padding: 10px;
-                    h4{
-                        margin: 0;
-                        padding-bottom: 5px;
-                        font-size: 1.1em;
-                        font-weight: 700;
-                        color: #000000;
-                    }
-                    h5{
-                        margin: 0;
-                        padding-bottom: 5px;
-                        font-size: 1.1em;
-                        font-weight: 400;
-                        color: #000000;
-                    }
-                }
-                p{
-                    margin: 0;
-                    position: absolute;
-                    right: 10px;
-                    top: 10px;
-                    height: 30px;
-                    width: 75px;
-                    font-size: .9em;
-                    font-weight: 600;
-                    text-align: center;
-                    vertical-align: middle;
-                    line-height: 30px;
-                    background-color: $tertiary-color;
-                    color: darken($color: $tertiary-color, $amount: 35);
-                    border-radius: 2px;
-                }
-
+        padding: 0 20px;
+        &__card{
+            position: relative;
+            width: 100%;
+            height: 260px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 5px 10px 0 rgba($color: #000000, $alpha: 0.2);
+            transition: transform 250ms ease;
+            &:hover{
+                transform: scale(1.01);
             }
+            img{
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 15px 15px 0 0;
+            }
+            a{
+                text-decoration: none;
+            }
+            &__description{
+                padding: 10px;
+                h4{
+                    margin: 0;
+                    padding-bottom: 5px;
+                    font-size: 1.1em;
+                    font-weight: 700;
+                    color: #000000;
+                }
+                h5{
+                    margin: 0;
+                    padding-bottom: 5px;
+                    font-size: 1.1em;
+                    font-weight: 400;
+                    color: #000000;
+                }
+            }
+            p{
+                margin: 0;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                height: 30px;
+                width: 75px;
+                font-size: .9em;
+                font-weight: 600;
+                text-align: center;
+                vertical-align: middle;
+                line-height: 30px;
+                background-color: $tertiary-color;
+                color: darken($color: $tertiary-color, $amount: 35);
+                border-radius: 2px;
+            }
+
         }
+    }
+    @media (max-width: 1023px){
+        &__list{
+            flex-direction: column;
+        }
+    }
+    @media (min-width: 1024px) and (max-width: 1023px)
+    {
+        &__list{
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            &__card{
+                width: 48%;
+                margin-bottom: 4%;
+            }
+        } 
     }
 }
 
 .heart{
-    position: absolute; 
-    height: 30px;
-    width: 30px;
+    position: absolute;    
     color: #000000;
-    font-size: 1.5em;
     z-index: 1;
     cursor: pointer;
     &--card{
@@ -376,20 +455,30 @@ body{
         font-size: 1.0em;
         opacity: 0;
         z-index: -1;
-        transition: opacity 250ms;
+        transition: opacity 250ms ease;
         left: 0px;
         top: 0px;
     }
+    @media (max-width: 759px){
+        height: 30px;
+        width: 30px;
+        font-size: 1.5em;
+    }
+    @media (min-width: 760px) and (max-width: 1023px)
+    {
+        height: 30px;
+        width: 30px;
+        font-size: 1.7em;
+    }
 }
-
-
-
 
 .footer{
     background-color: lighten($color: #000000, $amount: 25);
     padding-left: 20px;
     padding-bottom: 20px;
-    margin-top: 20px;
+    &__logo{
+        filter:invert(1);
+    }
     &__list{
         list-style: none;
         margin: 0;
@@ -421,9 +510,20 @@ body{
             margin: 10px 0 ;
         }
     }
-    @media (max-width: 599px) {
+    @media (max-width: 759px) {
         &__logo{
             height: 18px;
+            filter:invert(1);
+            margin-top: 30px;
+        }
+        &__list{           
+            padding: 10px 0;         
+        }
+    }
+    @media (min-width: 760px) and (max-width: 1023px)
+    {
+        &__logo{
+            height: 25px;
             filter:invert(1);
             margin-top: 30px;
         }
