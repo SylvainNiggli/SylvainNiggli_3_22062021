@@ -8,9 +8,21 @@
   z-index: -1;
 }
 
+@media (min-width: 1024px) {
+  .img-restaurant {
+    height: 85%;
+  }
+}
+
 .main {
   background: #f2f2f2;
   border-radius: 50px 50px 0 0;
+}
+
+@media (min-width: 1024px) {
+  .main {
+    background: rgba(242, 242, 242, 0.9);
+  }
 }
 
 .menu {
@@ -39,6 +51,22 @@
       -ms-flex-pack: center;
           justify-content: center;
   padding-bottom: 100px;
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .menu {
+    margin-left: 8%;
+    margin-right: 8%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu {
+    margin: 250px 15% 0 15%;
+  }
+  .menu__title h2 {
+    font-size: 1.6em;
+  }
 }
 
 .dish {
@@ -188,7 +216,7 @@
 }
 
 .dish__item__link:hover .dish__item__validation {
-  width: 60px;
+  width: 15%;
 }
 
 .dish__item__link:hover .dish__item__validation span {
@@ -256,9 +284,26 @@
 .dish__item__validation p {
   position: absolute;
   left: -40px;
-  top: 20px;
+  bottom: 0px;
   font-weight: 500;
   font-size: .9em;
+}
+
+@media (min-width: 1024px) {
+  .dish__title {
+    font-size: 1.2em;
+  }
+  .dish__item__description h4 {
+    margin: 15px 0 0 15px;
+    font-size: 1.1em;
+  }
+  .dish__item__description h5 {
+    margin: 10px 0 15px 15px;
+    font-size: 0.9em;
+  }
+  .dish__item__validation p {
+    font-size: 1em;
+  }
 }
 
 @-webkit-keyframes delayed-display {
@@ -280,22 +325,6 @@
   }
   100% {
     opacity: 1;
-  }
-}
-
-@-webkit-keyframes validation-item {
-  0% {
-  }
-  100% {
-    width: 60px;
-  }
-}
-
-@keyframes validation-item {
-  0% {
-  }
-  100% {
-    width: 60px;
   }
 }
 
