@@ -139,10 +139,10 @@
 }
 
 .dish__item {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: relative;
   background: #ffffff;
   border-radius: 10px;
   -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
@@ -151,6 +151,10 @@
   overflow: hidden;
   -webkit-animation: delayed-display 1s backwards;
           animation: delayed-display 1s backwards;
+}
+
+.dish__item__checkbox {
+  display: none;
 }
 
 .dish__item--1 {
@@ -203,25 +207,26 @@
           animation-delay: 1500ms;
 }
 
-.dish__item__link {
+.dish__item label {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  cursor: pointer;
+  color: transparent;
+  background-color: transparent;
+  z-index: 1;
+}
+
+.dish__item__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  text-decoration: none;
-  color: #000000;
-}
-
-.dish__item__link:hover .dish__item__validation {
-  width: 15%;
-}
-
-.dish__item__link:hover .dish__item__validation span {
-  -webkit-animation: rotate-check 500ms;
-          animation: rotate-check 500ms;
+  width: 100%;
 }
 
 .dish__item__description {
@@ -248,7 +253,6 @@
 
 .dish__item__validation {
   position: relative;
-  height: 100%;
   margin-left: 60px;
   width: 0;
   display: -webkit-box;
@@ -289,9 +293,26 @@
   font-size: .9em;
 }
 
+@media (max-width: 1023px) {
+  .dish__item__checkbox:checked ~ .dish__item__content .dish__item__validation {
+    width: 15%;
+  }
+  .dish__item__checkbox:checked ~ .dish__item__content .dish__item__validation span {
+    -webkit-animation: rotate-check 500ms;
+            animation: rotate-check 500ms;
+  }
+}
+
 @media (min-width: 1024px) {
   .dish__title {
     font-size: 1.2em;
+  }
+  .dish__item:hover .dish__item__validation {
+    width: 15%;
+  }
+  .dish__item:hover .dish__item__validation span {
+    -webkit-animation: rotate-check 500ms;
+            animation: rotate-check 500ms;
   }
   .dish__item__description h4 {
     margin: 15px 0 0 15px;

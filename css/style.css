@@ -470,7 +470,7 @@ body {
 
 .operation__list__card h3 {
   font-size: 1.1em;
-  font-weight: 550;
+  font-weight: 500;
   padding-left: 2%;
   padding-right: 2%;
   width: 80%;
@@ -669,7 +669,6 @@ body {
 .heart:hover {
   background: -webkit-linear-gradient(90deg, #ff79da 0%, #9356DC 100%);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -681,7 +680,6 @@ body {
   position: absolute;
   background: -webkit-linear-gradient(90deg, #ff79da 0%, #9356DC 100%);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 1.0em;
   opacity: 0;
